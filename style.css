@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 50px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* تصميم الفيديو بحيث يملأ الشاشة في الهواتف */
+video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* تخصيص الفيديو لعرضه بشكل أكبر على شاشات الكمبيوتر */
+@media screen and (min-width: 768px) {
+    video {
+        width: 800px; /* تعيين عرض ثابت للفيديو في شاشات الكمبيوتر */
+    }
+}
+
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:first-of-type {
+    background-color: #007bff;
+    color: white;
+}
+
+button:last-of-type {
+    background-color: #28a745;
+    color: white;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+span {
+    font-weight: bold;
+}

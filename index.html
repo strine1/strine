@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  تأكيد ☣️</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1 class="logo">🌐 MyWebsite</h1>
+    <h2>اختر نوع الجهاز للدخول إلى الموقع</h2>
+
+    <label for="password">كلمة السر:</label>
+    <input type="password" id="password" placeholder="أدخل كلمة السر">
+    
+    <br><br>
+
+    <!-- زر للتحقق من كلمة السر والجهاز -->
+    <button onclick="verifyAndCheckDevice()">✅ تحقق من كلمة السر والجهاز</button>
+
+    <br><br>
+
+    <!-- زر للحصول على كلمة السر عبر تليجرام -->
+    <button onclick="getPasswordFromTelegram()">💬 الحصول على كلمة السر عبر تلغرام</button>
+
+    <br><br>
+
+    <span id="copyMessage" style="display: none; color: green;">تم النسخ!</span>
+</body>
+</html>
