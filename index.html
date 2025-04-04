@@ -8,23 +8,37 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1 class="logo">🌐 MyWebsite</h1>
+    <script>document.addEventListener("contextmenu", function(event) {
+        event.preventDefault(); // منع القائمة الافتراضية
+        alert("We Love Strine ❤️");
+    });
+    </script>
+
+<div class="animated-background"></div>
+
+    <h1 class="logo">🌐 [Strine] الملكة</h1>
     <h2>اختر نوع الجهاز للدخول إلى الموقع</h2>
 
-    <label for="password">كلمة السر:</label>
+    <label for="password">كلمة السر</label>
     <input type="password" id="password" placeholder="أدخل كلمة السر">
     
     <br><br>
 
     <!-- زر للتحقق من كلمة السر والجهاز -->
-    <button onclick="verifyAndCheckDevice()">✅ تحقق من كلمة السر والجهاز</button>
+    <button onclick="verifyAndCheckDevice()">✅ تحقق من كلمة السر</button>
 
     <br><br>
 
     <!-- زر للحصول على كلمة السر عبر تليجرام -->
-    <button onclick="getPasswordFromTelegram()">💬 الحصول على كلمة السر عبر تلغرام</button>
+    <button onclick="getPasswordFromTelegram()"><img class="icont" src="telegram.png" alt="icon">  الحصول على كلمة السر  </button>
 
     <br><br>
+
+  
+  
+
+ 
+    
 
     <span id="copyMessage" style="display: none; color: green;">تم النسخ!</span>
 </body>

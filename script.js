@@ -3,7 +3,7 @@ function verifyAndCheckDevice() {
     const password = document.getElementById("password").value;
     
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    
+
     // التحقق من كلمة السر أولًا
     if (password !== "P9L63rt-@1S7d7O") {  // يمكنك تغيير كلمة السر هنا
         alert("❌ كلمة السر خاطئة!");
