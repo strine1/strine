@@ -6,23 +6,17 @@
   <title>لوحة تحكم المسؤول</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- حماية قوية -->
+  
   <script>
-    function detectDevice() {
-      const ua = navigator.userAgent.toLowerCase();
-      return (ua.includes("mobile") || ua.includes("android") || ua.includes("iphone")) ? "mobile" : "desktop";
-    }
-
-    const isAuthenticated = sessionStorage.getItem("authenticated");
-    const expectedDevice = sessionStorage.getItem("device");
-    const currentDevice = detectDevice();
-
-    // شروط الحماية
-    if (isAuthenticated !== "true" || expectedDevice !== currentDevice) {
-      alert("🚫 لا يمكنك الدخول مباشرة! عد إلى الصفحة الرئيسية");
-      window.location.href = "index.html";
+    // منع الدخول المباشر لصفحة المسؤول
+    if (sessionStorage.getItem("authenticated") !== "true" || sessionStorage.getItem("user") !== "admin") {
+      alert("🚫 لا يمكنك الدخول مباشرة! يجب التسجيل باستخدام كلمة السر.");
+      window.location.href = "index.html"; // إعادة التوجيه لصفحة تسجيل الدخول
     }
   </script>
+  
+
+
 
   <style>
     body {
