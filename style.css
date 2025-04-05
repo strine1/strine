@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
-    font-size: 24px;
+    font-size: 34px;
     background: black;
 
     flex-direction: column; /* ترتيب العناصر عموديًا */
@@ -41,8 +41,8 @@ h1 {
 
 /* تصميم الأزرار */
 button {
-    padding: 15px 25px;
-    font-size: 18px;
+    padding: 20px 75px;
+    font-size: 28px;
     font-weight: bold;
     color: white;
     background: rgba(255, 255, 255, 0.2);
@@ -64,7 +64,7 @@ button:hover {
 }
 
 .logo {
-    font-size: 36px;
+    font-size: 45px;
     font-weight: bold;
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffea, #0048ff, #7a00ff, #ff00e6);
     background-size: 300% 300%;
@@ -118,16 +118,16 @@ width: 42px;
     color: white;
     border: none;
     padding: 12px 20px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 14px;
+    border-radius: 9px;
     box-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .copy-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     box-shadow: 0 0 20px rgba(255, 0, 127, 1);
 }
 
@@ -149,4 +149,11 @@ width: 42px;
     display: block;
     opacity: 1;
     transform: translateY(10px);
+}
+
+input{
+padding: 14px;
+font-size: 26px;
+
+
 }
