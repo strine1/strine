@@ -1,3 +1,22 @@
+
+
+
+if (sessionStorage.getItem("authenticated") !== "true") {
+    alert("🚫 لا يمكنك الدخول مباشرة! عد إلى الصفحة الرئيسية.");
+    window.location.href = "index.html";
+}
+
+const expectedDevice = sessionStorage.getItem("device"); 
+const actualDevice = detectDevice();
+
+function detectDevice() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return (userAgent.includes("mobile") || userAgent.includes("android") || userAgent.includes("iphone")) ? "mobile" : "desktop";
+}
+
+
+
+
 function loadData() {
     // نحصل على بيانات الدخول من localStorage
     let logins = JSON.parse(localStorage.getItem("logins")) || [];
