@@ -1,45 +1,88 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  تأكيد ☣️</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>يرجى الانتظار</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Cairo', sans-serif;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5); /* لتعتيم الفيديو وإبراز النص */
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .loader {
+      width: 80px;
+      height: 80px;
+      border: 8px solid rgba(255,255,255,0.2);
+      border-top: 8px solid #fff;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite, glow 1.5s ease-in-out infinite alternate;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px #fff; }
+      100% { box-shadow: 0 0 25px #fff; }
+    }
+
+    .message {
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #fff;
+      animation: textFade 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes textFade {
+      0% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <script>document.addEventListener("contextmenu", function(event) {
-        event.preventDefault(); // منع القائمة الافتراضية
-        alert("We Love Strine ❤️");
-    });
-    </script>
+  <!-- فيديو الخلفية -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="Updateing.mp4" type="video/mp4">
+    متصفحك لا يدعم تشغيل الفيديو.
+  </video>
 
-<div class="animated-background"></div>
-
-    <h1 class="logo">🌐 [Strine] الملكة</h1>
-    <h2>اختر نوع الجهاز للدخول إلى الموقع</h2>
-
-    <label for="password">كلمة السر</label>
-    <input type="password" id="password" placeholder="أدخل كلمة السر">
-    
-    <br><br>
-
-    <!-- زر للتحقق من كلمة السر والجهاز -->
-    <button onclick="verifyAndCheckDevice()">✅ تحقق من كلمة السر</button>
-
-    <br><br>
-
-    <!-- زر للحصول على كلمة السر عبر تليجرام -->
-    <button onclick="getPasswordFromTelegram()"><img class="icont" src="telegram.png" alt="icon">  الحصول على كلمة السر  </button>
-
-    <br><br>
-
-  
-  
-
- 
-    
-
-    <span id="copyMessage" style="display: none; color: green;">تم النسخ!</span>
+  <!-- المحتوى -->
+  <div class="container">
+    <div class="loader"></div>
+    <div class="message">يوجد تحديث للموقع ,لاتقلق فترة وجيزة ...  ✨</div>
+  </div>
 </body>
 </html>
