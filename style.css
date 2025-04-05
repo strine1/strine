@@ -106,3 +106,47 @@ width: 42px;
 
 
 }
+
+
+
+/* زر النسخ */
+.copy-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #ff007f, #ff6600);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.copy-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 1);
+}
+
+/* رسالة النسخ */
+.copy-message {
+    background: linear-gradient(45deg, #ff007f, #ff6600);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 17px;
+  width: 200px;
+  margin: 0 auto;
+  display: none; /* تخفي الرسالة بشكل افتراضي */
+}
+
+
+
+.copy-message.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px);
+}

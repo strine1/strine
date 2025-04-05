@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختيار الجهاز</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkAuth()">
+
+    <h1>🌍 اختر طريقة العرض</h1>
+    <button onclick="goTo('mobile.html')">📱 موقع الهاتف</button>
+    <button onclick="goTo('desktop.html')">💻 موقع الكمبيوتر</button>
+
+    <script>
+        function checkAuth() {
+            if (sessionStorage.getItem("authenticated") !== "true") {
+                alert("🚫 لا يمكنك الدخول بدون كلمة السر!");
+                window.location.href = "index.html";
+            }
+        }
+
+        function goTo(page) {
+            sessionStorage.setItem("accessed", "true"); // تسجيل الجلسة
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

