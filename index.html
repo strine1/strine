@@ -48,14 +48,18 @@
       }
     }
 
-    // وظيفة نسخ رابط التليجرام
-    function getPasswordFromTelegram() {
-      const telegramLink = "https://t.me/sara_1z";
-      navigator.clipboard.writeText(telegramLink).then(() => {
-        const copyMessage = document.getElementById("copyMessage");
-        copyMessage.style.display = "block";
-        setTimeout(() => { copyMessage.style.display = "none"; }, 2000);
-      });
+    
+    
+  </script>
+
+
+
+ 
+
+  <script>
+    function openTelegram() {
+      const telegramLink = "https://t.me/sara_1z"; // رابط التليجرام
+      window.open(telegramLink, "_blank"); // فتح الرابط في نافذة جديدة
     }
   </script>
 
@@ -68,6 +72,8 @@
   <input type="password" id="password" placeholder="أدخل كلمة السر">
   <br><br>
   <button id="loginbtn" onclick="verifyLogin()">✅ تسجيل الدخول</button>
+   <!-- زر الدخول إلى التليجرام -->
+   <button class="mk" onclick="openTelegram()">الحصول على كلمة السر 🗝️</button>
 
   <script>
     document.addEventListener("keydown", function(event) {
@@ -78,12 +84,6 @@
   </script>
   
 
-
-  <!-- زر نسخ رابط التليجرام -->
-  <button class="copy-button" onclick="getPasswordFromTelegram()">🔗 نسخ رابط التليجرام للحصول على كلمة السر</button>
-
-  <!-- رسالة تأكيد النسخ -->
-  <div id="copyMessage" class="copy-message" style="display: none;">✅ تم النسخ!</div>
 
 </body>
 </html>
