@@ -1,89 +1,88 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أفلام 📷</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>يرجى الانتظار</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Cairo', sans-serif;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5); /* لتعتيم الفيديو وإبراز النص */
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .loader {
+      width: 80px;
+      height: 80px;
+      border: 8px solid rgba(255,255,255,0.2);
+      border-top: 8px solid #fff;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite, glow 1.5s ease-in-out infinite alternate;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px #fff; }
+      100% { box-shadow: 0 0 25px #fff; }
+    }
+
+    .message {
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #fff;
+      animation: textFade 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes textFade {
+      0% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
+  <!-- فيديو الخلفية -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="Updateing.mp4" type="video/mp4">
+    متصفحك لا يدعم تشغيل الفيديو.
+  </video>
 
-  <script>
-    // منع القائمة اليمنى
-    document.addEventListener("contextmenu", function(event) {
-      event.preventDefault();
-      alert("We Love Strine ❤️");
-    });
-
-    // دالة تحديد نوع الجهاز
-    function detectDevice() {
-      const userAgent = navigator.userAgent.toLowerCase();
-      return (userAgent.includes("mobile") || userAgent.includes("android") || userAgent.includes("iphone")) ? "mobile" : "desktop";
-    }
-
-    // دالة تحقق من البيانات المدخلة
-    function verifyLogin() {
-      const password = document.getElementById("password").value.trim();
-
-      // حسابات المستخدمين
-      const adminPassword = "Admin_123";
-      const userPassword = "P9L63rt-@1S7d7O";
-
-      // التحقق من كلمة السر
-      if (password === adminPassword) {
-        sessionStorage.setItem("authenticated", "true");
-        sessionStorage.setItem("user", "admin");
-        window.open("admin.html", "_blank"); // فتح لوحة التحكم للمسؤول
-        alert("✅ تم الدخول كمشرف بنجاح");
-      } else if (password === userPassword) {
-        sessionStorage.setItem("authenticated", "true");
-        sessionStorage.setItem("user", "normal");
-        const deviceType = detectDevice();
-        const page = (deviceType === "mobile") ? "mobile.html" : "desktop.html";
-        window.open(page, "_blank"); // فتح صفحة الهاتف أو الكمبيوتر للمستخدم العادي
-        alert(`✅ تم الدخول بنجاح من جهاز: ${deviceType === "mobile" ? "📱 الهاتف" : "💻 الكمبيوتر"}`);
-      } else {
-        alert("❌ كلمة السر غير صحيحة!");
-      }
-    }
-
-    
-    
-  </script>
-
-
-
- 
-
-  <script>
-    function openTelegram() {
-      const telegramLink = "https://t.me/sara_1z"; // رابط التليجرام
-      window.open(telegramLink, "_blank"); // فتح الرابط في نافذة جديدة
-    }
-  </script>
-
-  <div class="animated-background"></div>
-
-  <h1 class="logo">🌐 [Strine] الملكة</h1>
-  <h2>تسجيل الدخول</h2>
-
-  <label for="password">كلمة السر</label>
-  <input type="password" id="password" placeholder="أدخل كلمة السر">
-  <br><br>
-  <button id="loginbtn" onclick="verifyLogin()">✅ تسجيل الدخول</button>
-   <!-- زر الدخول إلى التليجرام -->
-   <button class="mk" onclick="openTelegram()">الحصول على كلمة السر 🗝️</button>
-
-  <script>
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-        document.getElementById("loginbtn").click();
-      }
-    });
-  </script>
-  
-
-
+  <!-- المحتوى -->
+  <div class="container">
+    <div class="loader"></div>
+    <div class="message">يوجد تحديث للموقع ,لاتقلق فترة وجيزة ...  ✨</div>
+  </div>
 </body>
 </html>
