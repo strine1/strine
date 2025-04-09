@@ -20,12 +20,14 @@
 
     .video-bg {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
       z-index: -1;
       filter: brightness(0.4);
+      transition: all 0.3s ease-in-out;
     }
 
     .container {
@@ -38,6 +40,7 @@
       text-align: center;
       z-index: 1;
       padding: 20px;
+      position: relative;
     }
 
     .strine {
@@ -63,20 +66,19 @@
       left: -9999px;
     }
 
-    /* خط التحميل الجديد */
     .loader {
       height: 4px;
       width: 130px;
       --c:no-repeat linear-gradient(#ffb648 0 0);
-      background: var(--c),var(--c),#ffe39b;
+      background: var(--c), var(--c), #ffe39b;
       background-size: 60% 100%;
       animation: l16 3s infinite;
       margin-bottom: 30px;
     }
 
     @keyframes l16 {
-      0%   {background-position:-150% 0,-150% 0}
-      66%  {background-position: 250% 0,-150% 0}
+      0% {background-position:-150% 0,-150% 0}
+      66% {background-position: 250% 0,-150% 0}
       100% {background-position: 250% 0, 250% 0}
     }
 
@@ -91,20 +93,83 @@
       0% { opacity: 0.6; }
       100% { opacity: 1; }
     }
+
+    .switch-button {
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: #ff8d41;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(255, 141, 65, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .strine {
+        font-size: 30px;
+      }
+
+      .loader {
+        width: 100px;
+      }
+
+      .message {
+        font-size: 20px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .strine {
+        font-size: 50px;
+      }
+
+      .loader {
+        width: 200px;
+      }
+
+      .message {
+        font-size: 30px;
+      }
+    }
   </style>
   <script>
-    (function() {
-      document.addEventListener("contextmenu", function(event) {
-        event.preventDefault();
-        alert("Strine The Best 👑🥰");
-      });
-    })();
+    // منع كليك يمين
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+      alert("Strine The Best 👑🥰");
+    });
+
+    // الكشف عن نوع الجهاز
+    function detectDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      if (/mobile|android|iphone|ipad|ipod/i.test(userAgent)) {
+        return 'mobile'; // جوال أو تابلت
+      }
+      return 'desktop'; // حاسوب
+    }
+
+    // عند تحميل الصفحة، نختار الفيديو المناسب
+    window.addEventListener('DOMContentLoaded', () => {
+      const deviceType = detectDevice();
+      const video = document.getElementById('video');
+      const source = document.getElementById('videoSource');
+
+      if (deviceType === 'mobile') {
+        // نغير الفيديو لتنسيق 9:16
+        source.src = 'updateing-9-16.mp4'; // تأكد من وجود هذا الملف في مجلدك
+        video.load();
+      }
+    });
+
+
   </script>
 </head>
 <body>
   <!-- فيديو الخلفية -->
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="updateing.mp4" type="video/mp4">
+  <video id="video" class="video-bg" autoplay muted loop playsinline>
+    <source id="videoSource" src="updateing.mp4" type="video/mp4">
     متصفحك لا يدعم تشغيل الفيديو.
   </video>
 
@@ -113,6 +178,7 @@
     <div class="strine">الملكة 𝓢𝓽𝓻𝓲𝓷𝓮 </div>
     <div class="loader"></div>
     <div class="message">يوجد تحديث للموقع<br>12h - 7 Day⏳</div>
+   
   </div>
 </body>
 </html>
