@@ -133,6 +133,43 @@
         font-size: 30px;
       }
     }
+    
+
+
+
+/* إخفاء التنبيه بشكل افتراضي */
+.landscape-warning {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding: 50px 20px;
+  z-index: 9999;
+}
+
+/* إذا كان الجهاز بالوضع الطولي على شاشة صغيرة */
+@media screen and (orientation: portrait) and (max-width: 1024px) {
+  .landscape-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: none !important; /* إخفاء المحتوى */
+  }
+
+  video.video-bg {
+    display: none !important;
+  }
+}
+
+
   </style>
   <script>
     // منع كليك يمين
@@ -172,7 +209,10 @@
     <source id="videoSource" src="updateing.mp4" type="video/mp4">
     متصفحك لا يدعم تشغيل الفيديو.
   </video>
-
+  <div class="landscape-warning">
+    الرجاء تدوير جهازك إلى الوضع العرضي لمشاهدة المحتوى 🌐
+  </div>
+  
   <!-- المحتوى -->
   <div class="container">
     <div class="strine">الملكة 𝓢𝓽𝓻𝓲𝓷𝓮 </div>
