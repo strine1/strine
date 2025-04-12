@@ -26,7 +26,7 @@
       height: 100vh;
       object-fit: cover;
       z-index: -1;
-      filter: brightness(0.4);
+      filter: brightness(0.7);
       transition: all 0.3s ease-in-out;
     }
 
@@ -67,8 +67,8 @@
     }
 
     .loader {
-      height: 4px;
-      width: 130px;
+      height: 6px;
+      width: 135px;
       --c:no-repeat linear-gradient(#ffb648 0 0);
       background: var(--c), var(--c), #ffe39b;
       background-size: 60% 100%;
@@ -85,7 +85,7 @@
     .message {
       font-size: 24px;
       font-weight: bold;
-      text-shadow: 0 0 10px #fff;
+      text-shadow: 0 0 10px #ccfcff;
       animation: fadeIn 2s ease-in-out infinite alternate;
     }
 
@@ -207,9 +207,14 @@
     <source id="videoSource" src="updateing.mp4" type="video/mp4">
     متصفحك لا يدعم تشغيل الفيديو.
   </video>
-  <div class="landscape-warning">
-    الرجاء تدوير جهازك إلى الوضع العرضي لمشاهدة المحتوى 🌐
+  <!-- تنبيه إذا الجهاز بالطول -->
+<div class="landscape-warning">
+  <div style="text-align: center;">
+    <p>الرجاء تدوير جهازك إلى الوضع العرضي لمشاهدة المحتوى, وتفعيل خيار ⬇️ 🌐</p>
+    <img src="شرح.jpg" alt="شرح تدوير الجهاز" style="max-width: 300px; width: 100%; margin-top: 20px; border-radius: 16px;" />
   </div>
+</div>
+
   
   <!-- المحتوى -->
   <div class="container">
